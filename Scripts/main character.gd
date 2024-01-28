@@ -23,11 +23,17 @@ var can_lagrima = true
 
 @onready var walk = $walk
 
+var character_health = 5
 
 var gravity = 0 
 
 func _ready():
 	animation_tree.active
+
+func takeDamage():
+	character_health -= 1
+	if character_health <=0:
+		print('MEMORI')
 
 func _input(event):
 	if event.is_action_pressed("patada"):

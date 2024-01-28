@@ -1,8 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://de380rkwg7g0h"]
+[gd_scene load_steps=34 format=3 uid="uid://d01rjx5um82u7"]
 
 [ext_resource type="Script" path="res://Scripts/main character.gd" id="1_2o3la"]
-[ext_resource type="PackedScene" uid="uid://ce7ngrkhuvy0g" path="res://Scenes/bullet.tscn" id="2_rflbw"]
-[ext_resource type="PackedScene" uid="uid://dhpha5hmaqlhp" path="res://Scenes/lagrimas.tscn" id="3_oa1m7"]
+[ext_resource type="PackedScene" uid="uid://bebk376c042uq" path="res://Scenes/bullet.tscn" id="2_rflbw"]
+[ext_resource type="PackedScene" path="res://Scenes/lagrimas.tscn" id="3_oa1m7"]
 [ext_resource type="Texture2D" uid="uid://bvgrl8d2tpvso" path="res://spritesheet (2).png" id="4_v0ypv"]
 [ext_resource type="Texture2D" uid="uid://2jxbnhuk6l8w" path="res://spritesheet.png" id="6_85caa"]
 [ext_resource type="Texture2D" uid="uid://cnxgddfpmjdkt" path="res://tortazo.png" id="6_oram6"]

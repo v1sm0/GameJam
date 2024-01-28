@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b373jb0l76s0l"]
+[gd_scene load_steps=8 format=3 uid="uid://bh7d7x6pjdrs5"]
 
 [ext_resource type="Texture2D" uid="uid://donirokqw8hax" path="res://Resourses/fondo_circo.png" id="1_dbwud"]
-[ext_resource type="PackedScene" uid="uid://de380rkwg7g0h" path="res://Scenes/main character.tscn" id="2_kcwqe"]
+[ext_resource type="PackedScene" uid="uid://d01rjx5um82u7" path="res://Scenes/main character.tscn" id="2_kcwqe"]
 [ext_resource type="PackedScene" uid="uid://wld15nn6finb" path="res://Scenes/CharacterScenes/EnemyCharacter.tscn" id="3_pq14w"]
 [ext_resource type="PackedScene" uid="uid://b53q2ayeicid6" path="res://Scenes/Menus/MenuPausa.tscn" id="4_kcjga"]
 

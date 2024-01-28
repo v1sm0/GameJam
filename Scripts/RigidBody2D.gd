@@ -31,48 +31,70 @@ var attack_action: ATTACKS = 1
 var attack_stop_time = 0
 var last_direction
 var action_timer = 0
+var isAlive = true
 
-var enemy_health = 1
+var enemy_health = 5
 
-func _ready():
-	body_entered.connect(_on_body_entered)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	gravity_scale = 0
-	attack()
-	if DIRECTION == 1:
-		action_timer = 120
-		icon_2.hide()
-		icon_3.show()
-		linear_velocity = VELOCITY
-		animation_player.play("walk_down")
-		if global_position.y > 500:
-			DIRECTION = 0
-			last_direction = 0
-	elif DIRECTION == -1:
-		action_timer = 60
-		linear_velocity = Vector2(0,0)
-		icon_2.hide()
-		icon_3.hide()
-		icon_5.show()
-		animation_player.play("attack")
-		attack_stop_time -=1
-		if attack_stop_time <= 20:
+	if isAlive: 
+		attack()
+		if DIRECTION == 1:
+			action_timer = 120
+			icon.hide()
+			icon_2.hide()
+			icon_3.show()
+			icon_4.hide()
 			icon_5.hide()
-			DIRECTION = last_direction
 			linear_velocity = VELOCITY
-	else: 
-		action_timer = 120
-		icon_2.show()
-		icon_3.hide()
-		animation_player.play("walk_up")
-		linear_velocity = -VELOCITY
-		if global_position.y < 0:
-			DIRECTION = 1
-			last_direction = 1
-	
-	time_counter -= 1
+			animation_player.play("walk_down")
+			if global_position.y > 500:
+				DIRECTION = 0
+				last_direction = 0
+				
+		elif DIRECTION == -1:
+			action_timer = 60
+			linear_velocity = Vector2(0,0)
+			icon.hide()
+			icon_2.hide()
+			icon_3.hide()
+			icon_4.hide()
+			icon_5.show()
+			animation_player.play("attack")
+			attack_stop_time -=1
+			if attack_stop_time <= 20:
+				icon_5.hide()
+				DIRECTION = last_direction
+				linear_velocity = VELOCITY
+				
+		elif DIRECTION == -2:
+			linear_velocity = Vector2(0,0)
+			icon.hide()
+			icon_2.hide()
+			icon_3.hide()
+			icon_4.show()
+			icon_5.hide()
+			isAlive = false
+			animation_player.play("dead")
+			
+		else: 
+			action_timer = 120
+			icon.hide()
+			icon_2.show()
+			icon_3.hide()
+			icon_4.hide()
+			icon_5.hide()
+			animation_player.play("walk_up")
+			linear_velocity = -VELOCITY
+			if global_position.y < 0:
+				DIRECTION = 1
+				last_direction = 1
+		
+		time_counter -= 1
+	else:
+		pass
 	
 func attack():
 	var Type = randi_range(0,1)
@@ -131,18 +153,10 @@ func rollingFire():
 		BottomBullet.size_changer(Vector2(2,2))
 		
 
-func reacieve_damage():
+func take_damage():
 	enemy_health -= 1
 	if enemy_health <= 0:
+		print('MUERTO EN POEMAS')
 		DIRECTION = -2
-		VELOCITY = Vector2(0,0)
-		icon.hide()
-		icon_2.hide()
-		icon_3.hide()
-		icon_4.show()
-		icon_5.hide()
-		animation_player.play("dead")
 		
 
-func _on_body_entered(body):
-	reacieve_damage()

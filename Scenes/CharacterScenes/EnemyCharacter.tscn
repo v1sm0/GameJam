@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://vqtmf678lnqh" path="res://Scenes/proyectiles/ball4.tscn" id="9_0akdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2uill"]
-size = Vector2(46, 46)
+size = Vector2(46, 86)
 
 [sub_resource type="Animation" id="Animation_4fixi"]
 length = 0.001
@@ -265,7 +265,7 @@ texture = ExtResource("7_64b7d")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(1113, 44)
+position = Vector2(1113, 43)
 shape = SubResource("RectangleShape2D_2uill")
 
 [node name="CenterBullet" type="Marker2D" parent="RigidBody2D"]

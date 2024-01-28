@@ -20,6 +20,5 @@ func size_changer(new_size: Vector2):
 	scale = new_size
 
 func _on_body_entered(body: Node2D):
-	if body.mask_layer == 1:
-		body.takeDamage()
-	pass
+	body.takeDamage()
+	queue_free()
