@@ -1,13 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://01vgkc76bfck"]
+[gd_scene load_steps=9 format=3 uid="uid://cvyu4gxd0oeir"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_lv8on"]
-[ext_resource type="PackedScene" uid="uid://c27o8a1rdti11" path="res://bullet_scene.tscn" id="2_s3sg6"]
+[ext_resource type="PackedScene" path="res://bullet_scene.tscn" id="2_s3sg6"]
 [ext_resource type="Texture2D" uid="uid://dpuyjedcy6ic" path="res://Scenes/CharacterScenes/OjoAlasPestañeando.png" id="3_a8uhh"]
-
-[sub_resource type="Animation" id="Animation_i8w7m"]
-resource_name = "ojo abriendo y cerrando "
-length = 0.3
-loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_mhq76"]
 length = 0.001
@@ -47,6 +42,11 @@ tracks/2/keys = {
 "update": 1,
 "values": [0]
 }
+
+[sub_resource type="Animation" id="Animation_i8w7m"]
+resource_name = "ojo abriendo y cerrando "
+length = 0.3
+loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_3jy2j"]
 resource_name = "pestaneo"

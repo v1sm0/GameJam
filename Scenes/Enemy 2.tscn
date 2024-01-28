@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7xc1yk3xxgn7"]
 
 [ext_resource type="Texture2D" uid="uid://dxgo58mb0xqqc" path="res://Scenes/CharacterScenes/ojito sin alas.png" id="1_1xuh4"]
-[ext_resource type="Script" path="res://Scenes/Enemy 2.gd" id="1_bkte0"]
+[ext_resource type="Script" path="res://Scripts/Enemy 2.gd" id="1_bkte0"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fag4f"]
 [ext_resource type="Texture2D" uid="uid://vxbnjta0ksjp" path="res://Scenes/NoobRender_roblox.webp" id="2_a0t4k"]
 

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b373jb0l76s0l"]
+
+[ext_resource type="Texture2D" uid="uid://donirokqw8hax" path="res://Resourses/fondo_circo.png" id="1_dbwud"]
+[ext_resource type="PackedScene" uid="uid://de380rkwg7g0h" path="res://Scenes/main character.tscn" id="2_kcwqe"]
+[ext_resource type="PackedScene" uid="uid://wld15nn6finb" path="res://Scenes/CharacterScenes/EnemyCharacter.tscn" id="3_pq14w"]
+[ext_resource type="PackedScene" uid="uid://b53q2ayeicid6" path="res://Scenes/Menus/MenuPausa.tscn" id="4_kcjga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v64l"]
+size = Vector2(2000, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0a2u"]
+size = Vector2(2000, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11fuy"]
+size = Vector2(50, 1000)
+
+[node name="Nivel" type="Node2D"]
+
+[node name="FondoCirco" type="Sprite2D" parent="."]
+position = Vector2(576.016, 322.75)
+scale = Vector2(0.685589, 0.698045)
+texture = ExtResource("1_dbwud")
+
+[node name="Clown" parent="." instance=ExtResource("2_kcwqe")]
+position = Vector2(200, 543)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(568, 665)
+shape = SubResource("RectangleShape2D_5v64l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(510, 19)
+shape = SubResource("RectangleShape2D_v0a2u")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 363)
+shape = SubResource("RectangleShape2D_11fuy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1153, 376)
+shape = SubResource("RectangleShape2D_11fuy")
+
+[node name="EnemyCharacter" parent="." instance=ExtResource("3_pq14w")]
+position = Vector2(-48, 72)
+
+[node name="MarginContainer" parent="." instance=ExtResource("4_kcjga")]
+offset_left = 1.0
+offset_right = 1151.0

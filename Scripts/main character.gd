@@ -21,6 +21,7 @@ var can_lagrima = true
 @onready var lagrima_cooldown = $lagrima_cooldown
 @onready var animation_player = $AnimationPlayer
 
+@onready var walk = $walk
 
 
 var gravity = 0 
@@ -94,6 +95,11 @@ func _physics_process(delta):
 		velocity.x = directionX * SPEED
 		velocity.y = directionY * SPEED
 	
+	if directionX > 0: 
+		walk.scale.x = 0.1
+	elif directionX < 0: 
+		walk.scale.x = -0.1
+		
 #patada
 		
 
