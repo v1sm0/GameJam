@@ -1,0 +1,133 @@
+[gd_scene load_steps=9 format=3 uid="uid://01vgkc76bfck"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_lv8on"]
+[ext_resource type="PackedScene" uid="uid://c27o8a1rdti11" path="res://bullet_scene.tscn" id="2_s3sg6"]
+[ext_resource type="Texture2D" uid="uid://dpuyjedcy6ic" path="res://Scenes/CharacterScenes/OjoAlasPestañeando.png" id="3_a8uhh"]
+
+[sub_resource type="Animation" id="Animation_i8w7m"]
+resource_name = "ojo abriendo y cerrando "
+length = 0.3
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_mhq76"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_a8uhh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3jy2j"]
+resource_name = "pestaneo"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_a8uhh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dmbv8"]
+_data = {
+"RESET": SubResource("Animation_mhq76"),
+"ojo abriendo y cerrando ": SubResource("Animation_i8w7m"),
+"pestaneo": SubResource("Animation_3jy2j")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eba2f"]
+
+[node name="Enemy" type="CharacterBody2D"]
+position = Vector2(329, 120)
+collision_mask = 2
+script = ExtResource("1_lv8on")
+Bala = ExtResource("2_s3sg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.11824
+scale = Vector2(0.0948999, 0.0892342)
+texture = ExtResource("3_a8uhh")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_dmbv8")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = 0.0130589
+scale = Vector2(1.40362, 1.34281)
+shape = SubResource("CircleShape2D_eba2f")
+
+[node name="Bala 1" type="Marker2D" parent="."]
+position = Vector2(18.0001, 7)
+rotation = -3.1098
+scale = Vector2(1.00349, 1.13732)
+
+[node name="Bala 2" type="Marker2D" parent="."]
+position = Vector2(-73, -30)
+scale = Vector2(37.182, 1.17503)
+
+[node name="Bala 3" type="Marker2D" parent="."]
+position = Vector2(-32, 37)

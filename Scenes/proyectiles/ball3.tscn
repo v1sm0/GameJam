@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt11jc4tnw2q7"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyBullet.gd" id="1_g4iic"]
+[ext_resource type="Texture2D" uid="uid://cos3pwrfo7iu5" path="res://Assets/bullets/ball3.png" id="2_v7uqn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6w2io"]
+radius = 32.0
+
+[sub_resource type="Animation" id="Animation_iasl2"]
+resource_name = "roll"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_dvw40"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dnco0"]
+_data = {
+"RESET": SubResource("Animation_dvw40"),
+"roll": SubResource("Animation_iasl2")
+}
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_g4iic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_6w2io")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.96046e-08, 1.84774e-06)
+scale = Vector2(0.0628571, 0.0635188)
+texture = ExtResource("2_v7uqn")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dnco0")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
