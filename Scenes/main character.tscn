@@ -360,8 +360,7 @@ visible = false
 position = Vector2(0, 24)
 
 [node name="bullet_spawn" type="Marker2D" parent="."]
-visible = false
-position = Vector2(22, 0)
+position = Vector2(-1, -23)
 
 [node name="tortas_cooldown" type="Timer" parent="."]
 
