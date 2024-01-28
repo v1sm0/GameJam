@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 @export var creditos: PackedScene
-@export var nivel: PackedScene
+
 @export var ajustes: PackedScene
 
 # Called when the node enters the scene tree for the first time.
@@ -13,7 +13,7 @@ func _process(delta):
 	pass
 
 func _on_jugar_pressed():
-	get_tree().change_scene_to_packed(nivel)
+	get_tree().change_scene_to_file("res://Scenes/NivelFinal.tscn")
 
 func _on_ajustes_pressed():
 	get_tree().change_scene_to_packed(ajustes)

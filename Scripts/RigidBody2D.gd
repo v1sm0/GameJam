@@ -47,7 +47,7 @@ func _physics_process(delta):
 		icon_3.show()
 		linear_velocity = VELOCITY
 		animation_player.play("walk_down")
-		if global_position.y > 600:
+		if global_position.y > 500:
 			DIRECTION = 0
 			last_direction = 0
 	elif DIRECTION == -1:
@@ -58,7 +58,7 @@ func _physics_process(delta):
 		icon_5.show()
 		animation_player.play("attack")
 		attack_stop_time -=1
-		if attack_stop_time <= 0:
+		if attack_stop_time <= 20:
 			icon_5.hide()
 			DIRECTION = last_direction
 			linear_velocity = VELOCITY

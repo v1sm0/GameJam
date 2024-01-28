@@ -5,8 +5,11 @@
 
 [node name="MarginContainer" type="MarginContainer"]
 process_mode = 3
-offset_right = 1150.0
-offset_bottom = 645.0
+visible = false
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 1167.0
+offset_bottom = 660.0
 script = ExtResource("1_35tbm")
 menu_principal = ExtResource("2_s2pxw")
 

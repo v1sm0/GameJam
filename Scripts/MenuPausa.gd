@@ -19,10 +19,11 @@ func _input(event):
 		get_tree().paused = visible
 
 func _on_reiniciar_pressed():
+	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 func _on_volver_menu_pressed():
-	print_debug("menu principal")
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(menu_principal)
 
 func _on_continuar_pressed():

@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6fi5svsdo0k7"]
+[gd_scene load_steps=9 format=3 uid="uid://b6fi5svsdo0k7"]
 
 [ext_resource type="Script" path="res://Scripts/MenuPrincipal.gd" id="1_socao"]
 [ext_resource type="Theme" uid="uid://bunu8xau6hccn" path="res://Resourses/general.tres" id="1_yy60u"]
 [ext_resource type="PackedScene" uid="uid://ciulfbc42yui3" path="res://Scenes/Credito.tscn" id="2_kyiey"]
-[ext_resource type="PackedScene" uid="uid://b373jb0l76s0l" path="res://Scenes/NivelFinal.tscn" id="3_df2kj"]
 [ext_resource type="PackedScene" uid="uid://dr46tvy8gu525" path="res://Scenes/Ajustes.tscn" id="4_uapff"]
+[ext_resource type="Texture2D" uid="uid://dawoeqr4afhvh" path="res://Scripts/lagrima.png" id="5_g62yx"]
+[ext_resource type="Texture2D" uid="uid://b5nlf1yni2tjl" path="res://tortavolando.png" id="6_0f0ym"]
+[ext_resource type="Texture2D" uid="uid://bmpm4kbuldwoj" path="res://spritesheet (1).png" id="7_eg3es"]
+[ext_resource type="Texture2D" uid="uid://cvhust3qmmco2" path="res://Assets/Poet/attack.png" id="8_l6yq2"]
 
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 1150.0
@@ -22,13 +25,13 @@ size_flags_vertical = 4
 layout_mode = 2
 script = ExtResource("1_socao")
 creditos = ExtResource("2_kyiey")
-nivel = ExtResource("3_df2kj")
 ajustes = ExtResource("4_uapff")
 
 [node name="Titulo" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_yy60u")
-text = "Nombre por definir"
+text = "smiley fight
+"
 
 [node name="espacio" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -51,6 +54,39 @@ text = "Créditos"
 layout_mode = 2
 text = "Salir
 "
+
+[node name="Lagrima" type="Sprite2D" parent="."]
+position = Vector2(41, 66)
+scale = Vector2(0.207438, 0.207438)
+texture = ExtResource("5_g62yx")
+
+[node name="Lagrima2" type="Sprite2D" parent="."]
+position = Vector2(128, 109)
+scale = Vector2(0.207438, 0.207438)
+texture = ExtResource("5_g62yx")
+
+[node name="Lagrima3" type="Sprite2D" parent="."]
+position = Vector2(67, 187)
+scale = Vector2(0.207438, 0.207438)
+texture = ExtResource("5_g62yx")
+
+[node name="Tortavolando" type="Sprite2D" parent="."]
+position = Vector2(927, 510)
+rotation = -1.69297
+texture = ExtResource("6_0f0ym")
+
+[node name="Spritesheet(1)" type="Sprite2D" parent="."]
+position = Vector2(255, 562)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_eg3es")
+hframes = 2
+
+[node name="Attack" type="Sprite2D" parent="."]
+position = Vector2(1141, 256)
+rotation = -0.453786
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_l6yq2")
+hframes = 2
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Jugar" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_jugar_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Ajustes" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_ajustes_pressed"]
