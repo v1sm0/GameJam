@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/MenuPrincipal.gd" id="1_socao"]
 [ext_resource type="Theme" uid="uid://bunu8xau6hccn" path="res://Resourses/general.tres" id="1_yy60u"]
-[ext_resource type="PackedScene" uid="uid://x3gdnf8wtspv" path="res://Scenes/Creditos.tscn" id="2_kyiey"]
+[ext_resource type="PackedScene" uid="uid://ciulfbc42yui3" path="res://Scenes/Credito.tscn" id="2_kyiey"]
 [ext_resource type="PackedScene" uid="uid://b373jb0l76s0l" path="res://Scenes/Nivel.tscn" id="3_0gj2j"]
 [ext_resource type="PackedScene" uid="uid://dr46tvy8gu525" path="res://Scenes/Ajustes.tscn" id="4_uapff"]
 
@@ -42,7 +42,7 @@ text = "Jugar"
 layout_mode = 2
 text = "Ajustes"
 
-[node name="Créditos" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Creditos" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Créditos"
 
@@ -53,5 +53,5 @@ text = "Salir
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Jugar" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_jugar_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Ajustes" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_ajustes_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Créditos" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_créditos_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Creditos" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_creditos_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Salir" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_salir_pressed"]

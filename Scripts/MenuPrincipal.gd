@@ -18,8 +18,8 @@ func _on_jugar_pressed():
 func _on_ajustes_pressed():
 	get_tree().change_scene_to_packed(ajustes)
 
-func _on_créditos_pressed():
-	get_tree().change_scene_to_packed(creditos)
-
 func _on_salir_pressed():
 	get_tree().quit()
+
+func _on_creditos_pressed():
+	get_tree().change_scene_to_packed(creditos)
