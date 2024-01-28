@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/MenuPrincipal.gd" id="1_socao"]
 [ext_resource type="Theme" uid="uid://bunu8xau6hccn" path="res://Resourses/general.tres" id="1_yy60u"]
 [ext_resource type="PackedScene" uid="uid://ciulfbc42yui3" path="res://Scenes/Credito.tscn" id="2_kyiey"]
-[ext_resource type="PackedScene" uid="uid://b373jb0l76s0l" path="res://Scenes/Nivel.tscn" id="3_0gj2j"]
+[ext_resource type="PackedScene" uid="uid://b373jb0l76s0l" path="res://Scenes/NivelFinal.tscn" id="3_df2kj"]
 [ext_resource type="PackedScene" uid="uid://dr46tvy8gu525" path="res://Scenes/Ajustes.tscn" id="4_uapff"]
 
 [node name="MarginContainer" type="MarginContainer"]
@@ -22,7 +22,7 @@ size_flags_vertical = 4
 layout_mode = 2
 script = ExtResource("1_socao")
 creditos = ExtResource("2_kyiey")
-nivel = ExtResource("3_0gj2j")
+nivel = ExtResource("3_df2kj")
 ajustes = ExtResource("4_uapff")
 
 [node name="Titulo" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]

@@ -21,6 +21,7 @@ size_flags_vertical = 0
 [node name="Nombre" type="Label" parent="Creditos/TextoCreditos"]
 layout_mode = 2
 text = "nombre rel juego"
+horizontal_alignment = 1
 
 [node name="espacio" type="Label" parent="Creditos/TextoCreditos"]
 layout_mode = 2
@@ -44,12 +45,12 @@ text = "
 
 [node name="Sonido" type="Label" parent="Creditos/TextoCreditos"]
 layout_mode = 2
-text = "Sonido"
+text = "Música y Sonido"
 horizontal_alignment = 1
 
 [node name="rodrigo" type="Label" parent="Creditos/TextoCreditos"]
 layout_mode = 2
-text = "Rodrigo"
+text = "Rodrigo Venegas @rodtimus"
 horizontal_alignment = 1
 
 [node name="espacio3" type="Label" parent="Creditos/TextoCreditos"]
@@ -66,13 +67,14 @@ horizontal_alignment = 1
 
 [node name="muchos_nombres" type="Label" parent="Creditos/TextoCreditos"]
 layout_mode = 2
-text = "Vicente Soto
+text = "Vicente Soto @vichos5
 
-Nadia Decar
+Nadia Decar @narby.99
 
-Sam Van Looveren 
+Sam Van Looveren Fantasmin#4925 
 
-Melanie Gómez"
+Melanie Gómez @ninix_05"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 offset_left = 876.0

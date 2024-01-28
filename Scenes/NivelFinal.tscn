@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b373jb0l76s0l"]
+
+[ext_resource type="Texture2D" uid="uid://donirokqw8hax" path="res://Resourses/fondo_circo.png" id="1_dbwud"]
+
+[node name="Nivel" type="Node2D"]
+
+[node name="FondoCirco" type="Sprite2D" parent="."]
+position = Vector2(581.889, 327)
+scale = Vector2(0.695473, 0.695473)
+texture = ExtResource("1_dbwud")
