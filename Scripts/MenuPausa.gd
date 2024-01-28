@@ -1,30 +1,33 @@
-extends VBoxContainer
+extends MarginContainer
 
 @export var menu_principal: PackedScene
-@export var nivel: PackedScene
+@onready var reiniciar = $PanelContainer/MarginContainer/VBoxContainer/Reiniciar
+@onready var volver_menu = $PanelContainer/MarginContainer/VBoxContainer/VolverMenu
+@onready var salir = $PanelContainer/MarginContainer/VBoxContainer/Salir
+@onready var continuar = $PanelContainer/MarginContainer/VBoxContainer/Continuar
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	reiniciar.pressed.connect(_on_reiniciar_pressed)
+	volver_menu.pressed.connect(_on_volver_menu_pressed)
+	salir.pressed.connect(_on_salir_pressed)
+	continuar.pressed.connect(_on_continuar_pressed)
+	hide()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+func _input(event):
+	if event.is_action_pressed("PAUSA"):
+		visible = !visible
+		get_tree().paused = visible
 
 func _on_reiniciar_pressed():
-	get_tree().change_scene_to_packed(nivel)
-
+	get_tree().reload_current_scene()
 
 func _on_volver_menu_pressed():
+	print_debug("menu principal")
 	get_tree().change_scene_to_packed(menu_principal)
 
-
 func _on_continuar_pressed():
-	pass # Replace with function body.
-
+	hide()
+	get_tree().paused = visible
 
 func _on_salir_pressed():
 	get_tree().quit()
