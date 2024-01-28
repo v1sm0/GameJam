@@ -39,6 +39,7 @@ layout_mode = 2
 text = "Jugar"
 
 [node name="Ajustes" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Ajustes"
 

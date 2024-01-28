@@ -8,7 +8,9 @@ func _ready():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	texto_creditos.position.y -= 1
+	if(texto_creditos.position.y > -2000):
+		texto_creditos.position.y -= 2
+	
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menus/MenuPrincipal.tscn")
