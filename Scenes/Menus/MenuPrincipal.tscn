@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6fi5svsdo0k7"]
+[gd_scene load_steps=6 format=3 uid="uid://b6fi5svsdo0k7"]
 
+[ext_resource type="Script" path="res://Scripts/MenuPrincipal.gd" id="1_socao"]
 [ext_resource type="Theme" uid="uid://bunu8xau6hccn" path="res://Resourses/general.tres" id="1_yy60u"]
+[ext_resource type="PackedScene" uid="uid://x3gdnf8wtspv" path="res://Scenes/Creditos.tscn" id="2_kyiey"]
+[ext_resource type="PackedScene" uid="uid://b373jb0l76s0l" path="res://Scenes/Nivel.tscn" id="3_0gj2j"]
+[ext_resource type="PackedScene" uid="uid://dr46tvy8gu525" path="res://Scenes/Ajustes.tscn" id="4_uapff"]
 
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 1150.0
@@ -16,6 +20,10 @@ size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
+script = ExtResource("1_socao")
+creditos = ExtResource("2_kyiey")
+nivel = ExtResource("3_0gj2j")
+ajustes = ExtResource("4_uapff")
 
 [node name="Titulo" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -42,3 +50,8 @@ text = "Créditos"
 layout_mode = 2
 text = "Salir
 "
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Jugar" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_jugar_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Ajustes" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_ajustes_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Créditos" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_créditos_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Salir" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_salir_pressed"]

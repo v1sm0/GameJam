@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://x3gdnf8wtspv"]
+
+[ext_resource type="Script" path="res://Scripts/Creditos.gd" id="1_ej3sn"]
+
+[node name="Creditos" type="Node2D"]
+script = ExtResource("1_ej3sn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 311.0
+offset_top = 38.0
+offset_right = 825.0
+offset_bottom = 1338.0
+size_flags_horizontal = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="VFlowContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="NombreJuego" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Nombre Del juego
+"
+horizontal_alignment = 1
+
+[node name="espacio" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+text = "
+
+"
+
+[node name="Ilustración" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+text = "Ilustraciones
+
+ Zhidra @lazhidra "
+horizontal_alignment = 1
+
+[node name="espacio2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+text = "
+
+
+
+"
+
+[node name="Sonido" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+text = "Sonido
+
+Rodrigo"
+horizontal_alignment = 1
+
+[node name="espacio3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+text = "
+
+
+
+"
+
+[node name="Programacion" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+text = "Programación
+
+Vicente Soto
+
+Nadia Decar
+
+Sam Van Looveren
+
+Melanie Gómez
+
+"
+horizontal_alignment = 1
+
+[node name="espacio4" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VFlowContainer"]
+layout_mode = 2
+text = "
+
+
+
+"

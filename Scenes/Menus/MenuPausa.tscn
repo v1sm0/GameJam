@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://b53q2ayeicid6"]
+[gd_scene load_steps=4 format=3 uid="uid://b53q2ayeicid6"]
+
+[ext_resource type="Script" path="res://Scripts/MenuPausa.gd" id="1_35tbm"]
+[ext_resource type="PackedScene" uid="uid://b6fi5svsdo0k7" path="res://Scenes/Menus/MenuPrincipal.tscn" id="2_c2d4y"]
+[ext_resource type="PackedScene" uid="uid://b373jb0l76s0l" path="res://Scenes/Nivel.tscn" id="3_3eqbu"]
 
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 1150.0
@@ -14,6 +18,9 @@ size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
+script = ExtResource("1_35tbm")
+menu_principal = ExtResource("2_c2d4y")
+nivel = ExtResource("3_3eqbu")
 
 [node name="Reiniciar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -32,3 +39,8 @@ text = "Continuar
 layout_mode = 2
 text = "Salir
 "
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Reiniciar" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VolverMenu" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_volver_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Continuar" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_continuar_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Salir" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_salir_pressed"]

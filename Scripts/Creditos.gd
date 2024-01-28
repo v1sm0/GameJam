@@ -1,4 +1,8 @@
-extends VBoxContainer
+extends Node2D
+
+@export var main_menu: PackedScene
+
+@onready var margin_container = $MarginContainer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,4 +12,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	margin_container.position.y -= 1
+	
+
+
+
