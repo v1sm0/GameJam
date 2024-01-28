@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhc538kwt8tw5"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyBullet.gd" id="1_0vw4f"]
+[ext_resource type="Texture2D" uid="uid://lr6ofcx2c72u" path="res://Assets/bullets/pergamino1.png" id="2_2fubr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ruil"]
+size = Vector2(308, 118)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_0vw4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_6ruil")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.0923611, 0.0933333)
+texture = ExtResource("2_2fubr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
