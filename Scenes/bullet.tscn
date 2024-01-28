@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce7ngrkhuvy0g"]
+
+[ext_resource type="Script" path="res://scenes/bullet.gd" id="1_3y7v4"]
+[ext_resource type="Texture2D" uid="uid://b5nlf1yni2tjl" path="res://tortavolando.png" id="2_lmkvx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov0hc"]
+size = Vector2(27, 22)
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_3y7v4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8.88178e-16, 1.13687e-13)
+rotation = -0.849975
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_lmkvx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_ov0hc")
+
+[node name="Timer" type="Timer" parent="."]

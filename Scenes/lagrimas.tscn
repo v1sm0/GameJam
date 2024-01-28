@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhpha5hmaqlhp"]
+
+[ext_resource type="Script" path="res://scenes/lagrimas.gd" id="1_erg23"]
+[ext_resource type="Texture2D" uid="uid://dns3gbikr628n" path="res://gota.png" id="2_pphe7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ef0di"]
+size = Vector2(25, 16)
+
+[node name="lagrima" type="Area2D"]
+script = ExtResource("1_erg23")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.57085
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_pphe7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1)
+shape = SubResource("RectangleShape2D_ef0di")

@@ -1,19 +1,351 @@
-[gd_scene load_steps=4 format=3 uid="uid://de380rkwg7g0h"]
+[gd_scene load_steps=34 format=3 uid="uid://de380rkwg7g0h"]
 
 [ext_resource type="Script" path="res://scenes/main character.gd" id="1_2o3la"]
-[ext_resource type="Texture2D" uid="uid://1b01y0agt3ov" path="res://favicon-32x32.png" id="1_ok012"]
+[ext_resource type="PackedScene" uid="uid://ce7ngrkhuvy0g" path="res://scenes/bullet.tscn" id="2_rflbw"]
+[ext_resource type="PackedScene" uid="uid://dhpha5hmaqlhp" path="res://scenes/lagrimas.tscn" id="3_oa1m7"]
+[ext_resource type="Texture2D" uid="uid://bvgrl8d2tpvso" path="res://spritesheet (2).png" id="4_v0ypv"]
+[ext_resource type="Texture2D" uid="uid://2jxbnhuk6l8w" path="res://spritesheet.png" id="6_85caa"]
+[ext_resource type="Texture2D" uid="uid://cnxgddfpmjdkt" path="res://tortazo.png" id="6_oram6"]
+[ext_resource type="Texture2D" uid="uid://b5ie2fwf4c802" path="res://ojala funcione 2.png" id="7_418pw"]
+[ext_resource type="Texture2D" uid="uid://bdjnhwg6nnipd" path="res://up up2.png" id="8_x6p8t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ap1jp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0x7d"]
-size = Vector2(47, 48.5)
+size = Vector2(47, 92)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_p35vt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("walk:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_v0ypv")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("walk:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_r1qm6"]
+resource_name = "disparar torta"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("walk:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("walk:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_oram6")]
+}
+
+[sub_resource type="Animation" id="Animation_wcmvk"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1.03526, 1.03526, 1.03526),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("walk:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_85caa")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("walk:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_hd0tk"]
+resource_name = "patada"
+length = 1.5
+
+[sub_resource type="Animation" id="Animation_0vs1p"]
+resource_name = "walk right or left"
+length = 0.48
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("walk:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_v0ypv")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("walk:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_kqkvq"]
+resource_name = "walk down"
+length = 0.65
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("walk:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_418pw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("walk:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_7ts1a"]
+resource_name = "walk up"
+length = 0.65
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("walk:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_x6p8t")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("walk:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_onxc8"]
+_data = {
+"RESET": SubResource("Animation_p35vt"),
+"disparar torta": SubResource("Animation_r1qm6"),
+"idle": SubResource("Animation_wcmvk"),
+"patada": SubResource("Animation_hd0tk"),
+"walk down": SubResource("Animation_kqkvq"),
+"walk right or left": SubResource("Animation_0vs1p"),
+"walk up": SubResource("Animation_7ts1a")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wt07q"]
+animation = &"disparar torta"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gyoad"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xgxlt"]
+animation = &"walk down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_igiux"]
+animation = &"walk right or left"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wdto4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pscna"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gkq0t"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hgti6"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_68ich"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j5h3d"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dt0g5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mpdcm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k4tr5"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hubql"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n58rk"]
+"states/disparar torta/node" = SubResource("AnimationNodeAnimation_wt07q")
+"states/disparar torta/position" = Vector2(711, 227)
+states/idle/node = SubResource("AnimationNodeAnimation_gyoad")
+states/idle/position = Vector2(325, 100)
+"states/walk down/node" = SubResource("AnimationNodeAnimation_xgxlt")
+"states/walk down/position" = Vector2(417.051, 270.662)
+"states/walk right or left/node" = SubResource("AnimationNodeAnimation_igiux")
+"states/walk right or left/position" = Vector2(603, -64)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_wdto4"), "idle", "walk right or left", SubResource("AnimationNodeStateMachineTransition_pscna"), "walk right or left", "disparar torta", SubResource("AnimationNodeStateMachineTransition_gkq0t"), "idle", "disparar torta", SubResource("AnimationNodeStateMachineTransition_hgti6"), "disparar torta", "idle", SubResource("AnimationNodeStateMachineTransition_68ich"), "disparar torta", "walk right or left", SubResource("AnimationNodeStateMachineTransition_j5h3d"), "idle", "walk down", SubResource("AnimationNodeStateMachineTransition_dt0g5"), "walk right or left", "walk down", SubResource("AnimationNodeStateMachineTransition_mpdcm"), "disparar torta", "walk down", SubResource("AnimationNodeStateMachineTransition_k4tr5"), "walk down", "disparar torta", SubResource("AnimationNodeStateMachineTransition_hubql")]
+graph_offset = Vector2(-60.9491, -2.47374)
+
+[node name="Clown" type="CharacterBody2D"]
 position = Vector2(149, 114)
 script = ExtResource("1_2o3la")
+bullet_scene = ExtResource("2_rflbw")
+lagrimas_scene = ExtResource("3_oa1m7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="walk" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1.90625, 1.84375)
-texture = ExtResource("1_ok012")
+position = Vector2(-0.385002, 0.245502)
+scale = Vector2(0.1, 0.098)
+texture = ExtResource("4_v0ypv")
+hframes = 3
+
+[node name="Area2D" type="Area2D" parent="walk"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walk/Area2D"]
+position = Vector2(-330, 10.3093)
+shape = SubResource("CapsuleShape2D_ap1jp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_t0x7d")
@@ -24,5 +356,29 @@ wait_time = 0.2
 [node name="dash_again_timer" type="Timer" parent="."]
 wait_time = 0.7
 
+[node name="bullet" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, 24)
+
+[node name="bullet_spawn" type="Marker2D" parent="."]
+visible = false
+position = Vector2(22, 0)
+
+[node name="tortas_cooldown" type="Timer" parent="."]
+
+[node name="lagrima_cooldown" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_onxc8")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_n58rk")
+anim_player = NodePath("../AnimationPlayer")
+
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="dash_again_timer" to="." method="_on_dash_again_timeout"]
+[connection signal="timeout" from="dash_again_timer" to="." method="_on_dash_again_timer_timeout"]
+[connection signal="timeout" from="tortas_cooldown" to="." method="_on_tortas_cooldown_timeout"]
+[connection signal="timeout" from="lagrima_cooldown" to="." method="_on_lagrima_cooldown_timeout"]
