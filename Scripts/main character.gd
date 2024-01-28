@@ -31,12 +31,10 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("patada"):
-		act_weapon = WEAPONS[0]
-	elif event.is_action_pressed("flor"):
 		act_weapon = WEAPONS[1]
-	elif event.is_action_pressed("torta"):
+	elif event.is_action_pressed("flor"):
 		act_weapon = WEAPONS[2]
-	elif event.is_action_pressed("no_weapon"):
+	elif event.is_action_pressed("torta"):
 		act_weapon = null
 	elif event.is_action_pressed("LEFT") or event.is_action_pressed("RIGHT"):
 		$AnimationPlayer.play("walk right or left")
@@ -121,6 +119,7 @@ func fire():
 	bullet.rotation = bullet_spawn.global_position.direction_to(get_global_mouse_position()).angle()
 	can_tortazo = false
 	tortas_cooldown.start(.7)
+	var damage = 2
 
 func fire_lagrima():
 	if not lagrimas_scene:
@@ -131,6 +130,7 @@ func fire_lagrima():
 	lagrima.rotation = bullet_spawn.global_position.direction_to(get_global_mouse_position()).angle()
 	can_lagrima = false
 	lagrima_cooldown.start(.3)
+	var damage = 1
 
 
 func _on_dash_again_timer_timeout():
