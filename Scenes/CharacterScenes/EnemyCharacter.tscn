@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://wld15nn6finb"]
+
+[ext_resource type="Texture2D" uid="uid://1fold8tlck1f" path="res://icon.svg" id="1_epv8s"]
+[ext_resource type="Script" path="res://Scripts/RigidBody2D.gd" id="1_fllg3"]
+[ext_resource type="PackedScene" uid="uid://cxudrq13ouorw" path="res://Scenes/EnemyBullet.tscn" id="2_iloey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uill"]
+size = Vector2(46, 46)
+
+[node name="EnemyCharacter" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+script = ExtResource("1_fllg3")
+poem_scene = ExtResource("2_iloey")
+
+[node name="Icon" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(47, 50)
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("1_epv8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(47, 50)
+shape = SubResource("RectangleShape2D_2uill")
+
+[node name="CenterBullet" type="Marker2D" parent="RigidBody2D"]
+position = Vector2(47, 50)
+gizmo_extents = 5.0
+
+[node name="TopBullet" type="Marker2D" parent="RigidBody2D"]
+position = Vector2(47, 34)
+gizmo_extents = 5.0
+
+[node name="BottomBullet" type="Marker2D" parent="RigidBody2D"]
+position = Vector2(47, 66)
+gizmo_extents = 5.0
