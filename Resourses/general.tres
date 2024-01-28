@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bunu8xau6hccn"]
+
+[ext_resource type="FontFile" uid="uid://b3un7qfhe5rxe" path="res://Resourses/Fonts/TrueType (.ttf)/Kaph-Italic.ttf" id="1_bor8x"]
+[ext_resource type="Texture2D" uid="uid://bk7006rjkppa8" path="res://Resourses/Buttons/JuicyCasualGameButtons/PNG/JCGB-red_L_rounded_btn.png" id="1_n0lwh"]
+[ext_resource type="Texture2D" uid="uid://ch5o1pi8m0uuh" path="res://Resourses/Buttons/JuicyCasualGameButtons/PNG/JCGB-blue_L_rounded_btn.png" id="2_h1k8x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yc2ip"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("1_n0lwh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k35cx"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_h1k8x")
+
+[resource]
+default_font = ExtResource("1_bor8x")
+Button/font_sizes/font_size = 20
+Button/styles/hover = SubResource("StyleBoxTexture_yc2ip")
+Button/styles/normal = SubResource("StyleBoxTexture_k35cx")
+Label/font_sizes/font_size = 40
+VBoxContainer/constants/separation = 20

@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6fi5svsdo0k7"]
+
+[ext_resource type="Theme" uid="uid://bunu8xau6hccn" path="res://Resourses/general.tres" id="1_yy60u"]
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 1150.0
+offset_bottom = 645.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_yy60u")
+text = "Nombre por definir"
+
+[node name="espacio" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "   "
+
+[node name="Jugar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Jugar"
+
+[node name="Ajustes" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ajustes"
+
+[node name="Créditos" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Créditos"
+
+[node name="Salir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Salir
+"
