@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh7d7x6pjdrs5"]
+[gd_scene load_steps=10 format=3 uid="uid://b373jb0l76s0l"]
 
 [ext_resource type="Texture2D" uid="uid://donirokqw8hax" path="res://Resourses/fondo_circo.png" id="1_dbwud"]
 [ext_resource type="PackedScene" uid="uid://d01rjx5um82u7" path="res://Scenes/main character.tscn" id="2_kcwqe"]
 [ext_resource type="PackedScene" uid="uid://wld15nn6finb" path="res://Scenes/CharacterScenes/EnemyCharacter.tscn" id="3_pq14w"]
 [ext_resource type="PackedScene" uid="uid://b53q2ayeicid6" path="res://Scenes/Menus/MenuPausa.tscn" id="4_kcjga"]
+[ext_resource type="PackedScene" uid="uid://b61i8cq20ghx5" path="res://Scenes/Interfases/VidaJefe.tscn" id="5_muwjm"]
+[ext_resource type="PackedScene" uid="uid://t5y1igiardc" path="res://Scenes/Interfases/VidaPlayer.tscn" id="6_x4t45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5v64l"]
 size = Vector2(2000, 50)
@@ -48,3 +50,7 @@ position = Vector2(-48, 72)
 [node name="MarginContainer" parent="." instance=ExtResource("4_kcjga")]
 offset_left = 1.0
 offset_right = 1151.0
+
+[node name="EnemyLife" parent="." instance=ExtResource("5_muwjm")]
+
+[node name="PlayerLife" parent="." instance=ExtResource("6_x4t45")]

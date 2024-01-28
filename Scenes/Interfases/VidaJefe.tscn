@@ -1,0 +1,153 @@
+[gd_scene load_steps=3 format=3 uid="uid://b61i8cq20ghx5"]
+
+[ext_resource type="Script" path="res://Scripts/VidaJefe.gd" id="1_e5uup"]
+[ext_resource type="Texture2D" uid="uid://coenw7u5rlleg" path="res://Resourses/HUD_lifenbuffs.png" id="2_4hy4u"]
+
+[node name="EnemyLife" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5uup")
+
+[node name="gris1" type="Sprite2D" parent="."]
+position = Vector2(748, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris2" type="Sprite2D" parent="."]
+position = Vector2(788, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris3" type="Sprite2D" parent="."]
+position = Vector2(828, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris4" type="Sprite2D" parent="."]
+position = Vector2(868, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris5" type="Sprite2D" parent="."]
+position = Vector2(908, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris6" type="Sprite2D" parent="."]
+position = Vector2(948, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris7" type="Sprite2D" parent="."]
+position = Vector2(988, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris8" type="Sprite2D" parent="."]
+position = Vector2(1028, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris9" type="Sprite2D" parent="."]
+position = Vector2(1068, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="gris10" type="Sprite2D" parent="."]
+position = Vector2(1108, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(394.821, 18.7913, 99.3846, 87.6923)
+
+[node name="purple1" type="Sprite2D" parent="."]
+position = Vector2(1111, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple2" type="Sprite2D" parent="."]
+position = Vector2(1071, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple3" type="Sprite2D" parent="."]
+position = Vector2(1031, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple4" type="Sprite2D" parent="."]
+position = Vector2(991, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple5" type="Sprite2D" parent="."]
+position = Vector2(951, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple6" type="Sprite2D" parent="."]
+position = Vector2(911, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple7" type="Sprite2D" parent="."]
+position = Vector2(871, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple8" type="Sprite2D" parent="."]
+position = Vector2(831, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple9" type="Sprite2D" parent="."]
+position = Vector2(791, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)
+
+[node name="purple10" type="Sprite2D" parent="."]
+position = Vector2(751, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4hy4u")
+region_enabled = true
+region_rect = Rect2(11.1793, 312.256, 109.128, 81.8462)

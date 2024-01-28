@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh8bts43hljcg"]
+
+[ext_resource type="Texture2D" uid="uid://vr3e2hp05iiw" path="res://Resourses/gameover2_payaso.png" id="1_j1chi"]
+[ext_resource type="Script" path="res://Scripts/Derrota.gd" id="1_p80j8"]
+[ext_resource type="Texture2D" uid="uid://dns3gbikr628n" path="res://gota.png" id="2_kclyn"]
+[ext_resource type="Texture2D" uid="uid://bs6hb28ab3lnj" path="res://Assets/Poet/walk.png.png" id="3_ofhtk"]
+
+[node name="Derrota" type="Node2D"]
+script = ExtResource("1_p80j8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 92.0
+offset_top = 62.0
+offset_right = 1051.0
+offset_bottom = 212.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "HAz fallado en tu misión y 
+las sonrisas se han 
+perdido para siempre"
+horizontal_alignment = 1
+
+[node name="Gameover2Payaso" type="Sprite2D" parent="."]
+position = Vector2(236, 429)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_j1chi")
+
+[node name="Gota" type="Sprite2D" parent="Gameover2Payaso"]
+position = Vector2(-130, -53.3334)
+texture = ExtResource("2_kclyn")
+
+[node name="Walk_png" type="Sprite2D" parent="."]
+position = Vector2(970, 446)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_ofhtk")
+hframes = 3
+
+[node name="Button" type="Button" parent="."]
+offset_left = 338.0
+offset_top = 280.0
+offset_right = 792.0
+offset_bottom = 392.0
+text = "Volver a intentarlo"
