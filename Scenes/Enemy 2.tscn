@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7xc1yk3xxgn7"]
+
+[ext_resource type="Texture2D" uid="uid://dxgo58mb0xqqc" path="res://Scenes/CharacterScenes/ojito sin alas.png" id="1_1xuh4"]
+[ext_resource type="Script" path="res://Scenes/Enemy 2.gd" id="1_bkte0"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_fag4f"]
+[ext_resource type="Texture2D" uid="uid://vxbnjta0ksjp" path="res://Scenes/NoobRender_roblox.webp" id="2_a0t4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajwlm"]
+size = Vector2(152.89, 268.624)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i56p4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-31, -83)
+scale = Vector2(0.415737, 0.415737)
+collision_layer = 2
+script = ExtResource("1_fag4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_a0t4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(2.5, -9)
+scale = Vector2(1.11845, 1.06999)
+shape = SubResource("RectangleShape2D_ajwlm")
+
+[node name="Enemy 2" type="CharacterBody2D" parent="."]
+position = Vector2(824, 332)
+script = ExtResource("1_bkte0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy 2"]
+scale = Vector2(0.320332, 0.320332)
+texture = ExtResource("1_1xuh4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy 2"]
+position = Vector2(0, -13)
+scale = Vector2(4.3196, 4.3196)
+shape = SubResource("CircleShape2D_i56p4")
